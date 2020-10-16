@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import './ProductList.css';
 
 export default function ProductList({ type }) {
     const [products, setProducts] = useState([]);
@@ -8,12 +10,18 @@ export default function ProductList({ type }) {
         })
     }, [type]);
     return (
-        <ul className="ProductList">
-            {products.map(({ id, name }) => 
-                <li key={id}>
-                    <a href={`/${id}`}>{name}</a>
-                </li>
-            )}
-        </ul>
+        <div className="ProductList">
+            <h2>Products</h2>
+            <ul>
+                {products.map(({ id, name, thumb }) => 
+                    <li key={`product-${id}`}>
+                        <Link to={`/${id}`}>
+                            <img src={thumb}/>
+                            <strong>{name}</strong>
+                        </Link>
+                    </li>
+                )}
+            </ul>
+        </div>
     );
 }

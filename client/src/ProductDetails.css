@@ -1,0 +1,64 @@
+.ProductDetails {
+    display: flex;
+    flex-flow: column nowrap;
+}
+.ProductDetails h2 a {
+    text-decoration: none;
+}
+.ProductDetails h2 a:after {
+    content: '>';
+    text-decoration: none;
+    color: #58595b;
+    padding: 0 5px;
+}
+
+.ProductDetails .product {
+    display: flex;
+    flex: 1 1 100%;
+    flex-flow: row nowrap;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.ProductDetails .product img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.ProductDetails .product > div {
+    display: flex;
+    flex: 1 1 35%;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    margin: 0 0 0 20px;
+}
+.ProductDetails .product .price {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.ProductDetails .product .price span {
+    display: flex;
+    color: #ffffff;
+    text-transform: uppercase;
+    background: #f05323;
+    flex: 0 1 33%;
+    padding: 3px 5px;
+    border-bottom: 1px solid #fff;
+}
+.ProductDetails .product ul {
+    display: flex;
+    flex-flow: column nowrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: flex-end;
+}
+
+.ProductDetails .product ul li {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 100%;
+    width: 100%;
+}

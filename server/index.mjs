@@ -1,31 +1,37 @@
 import express from 'express';
 import getProducts, { getProduct } from './dao/products.mjs';
-import getOptions, { getOption } from './dao/options.mjs';
+import getPrice from './dao/price.mjs';
+
 const app = express();
 const port = 3001;
-
+app.use(express.json({ type: "*/*" }));
 app.use((req, res, next) => {
     res.set('Access-Control-Allow-Origin', '*');
     next();
 });
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
 
-app.get('/products', (req, res) => {
-    res.json(getProducts());
+app.get('/products', async (req, res) => {
+    const products = await getProducts();
+    res.json(products.map(({ name, id, thumb }) => ({ name, id, thumb })));
 });
 
-app.get('/products/:product', (req, res) => {
-    res.json(getProduct(parseInt(req.params.product, 10)));
+app.get('/products/:product', async (req, res) => {
+    const product = await getProduct(parseInt(req.params.product, 10));
+    if (!product) {
+        res.status(404);
+        res.send();
+    } else {
+        res.json(product);
+    }
 });
 
-app.get('/options', (req, res) => {
-    res.json(getOptions());
-});
-
-app.get('/options/:option', (req, res) => {
-    res.json(getOption(parseInt(req.params.option, 10)));
+app.post('/products/:type/price', async (req, res) => {
+    const options = req.body;
+    const price = await getPrice({...options, type: req.params.type});
+    res.json({
+        productId: req.params.product,
+        price: price
+    });
 });
 
 app.listen(port, () => {

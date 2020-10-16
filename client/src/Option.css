@@ -1,0 +1,21 @@
+.Option {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1px;
+}
+
+.Option label {
+    color: #ffffff;
+    background: #f05323;
+    display: flex;
+    flex: 0 1 33%;
+    padding: 3px 5px;
+    text-transform: uppercase;
+}
+
+.Option select {
+    display: flex;
+    flex: 1 1 auto;
+    border: 1px solid #f05323;
+}

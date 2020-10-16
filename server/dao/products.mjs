@@ -1,30 +1,18 @@
-const products = [
-    {
-        "id": 1,
-        "name": "product 1",
-        "options": {
-            "size": ["small", "medium", "large"]
-        },
-        "images": {
-            "small": [],
-            "medium": [],
-            "large": []
-        }
-    },
-    {
-        "id": 2,
-        "name": "product 2"
-    },
-    {
-        "id": 3,
-        "name": "product 3"
-    }
-];
+import { readFile } from "fs/promises";
 
-export default function getProducts() {
-    return products;
+export default async function getProducts() {
+    const data = await readFile('./data/products.json');
+    if (!data) {
+        return [];
+    }
+    try {
+        return JSON.parse(data);
+    } catch (e) {
+        return [];
+    }
 }
 
-export function getProduct(id) {
+export async function getProduct(id) {
+    const products = await getProducts();
     return products.find(p => p.id === id);
 }

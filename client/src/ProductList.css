@@ -1,0 +1,33 @@
+.ProductList ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.ProductList li {
+    display: flex;
+    flex: 1 1 auto;
+    width: 25%;
+    padding: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
+.ProductList li a {
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    color: #58595b;
+    text-decoration: none;
+}
+
+.ProductList li:hover {
+    background-color: #eeeeee;
+    border: 1px solid #f05323;
+}
+
+.ProductList strong {
+    display: flex;
+}

@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "type": "photo-card",
+        "name": "Photo Card",
+        "thumb": "//c2.staticsfly.com/asset/fetch/cs/STATIONERYCARD_6x8-89050-27450-MERCHMEDIUM_THUMB1-ROUNDED/thumbnail.preview/v1",
+        "img": "//c2.staticsfly.com/asset/fetch/cs/STATIONERYCARD_6x8-89050-27450-MERCHLARGE_FRONT-ROUNDED/thumbnail.preview/v1",
+        "options": [
+            {
+                "key": "size",
+                "values": ["small", "medium"]
+            },
+            {
+                "key": "paper",
+                "values": ["cardstock", "photopaper"]
+            },
+            {
+                "key": "photos",
+                "values": [1,2,3]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Foil Card",
+        "type": "simple-card",
+        "img": "//c4.staticsfly.com/asset/fetch/cs/DIGITALFOILCARD-617025-22101-MERCHLARGE_FRONT-ROUNDED/thumbnail.preview/v1",
+        "thumb": "//c1.staticsfly.com/asset/fetch/cs/DIGITALFOILCARD-617025-22101-MERCHMEDIUM_THUMB-ROUNDED/thumbnail.preview/v1",
+        "options": [
+            {
+                "key": "size",
+                "values": ["small", "medium", "large"]
+            },
+            {
+                "key": "foil",
+                "values": ["none", "gold", "silver"]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "type": "simple-card",
+        "name": "Thank You Card",
+        "img": "//c3.staticsfly.com/asset/fetch/cs/STATIONERYCARD_FOLDED_3x5-30201-19549-MERCHLARGE_FRONT/thumbnail.preview/v1",
+        "thumb": "//c2.staticsfly.com/asset/fetch/cs/STATIONERYCARD_FOLDED_3x5-30201-19549-MERCHMEDIUM_THUMB/thumbnail.preview/v1",
+        "options": [
+            {
+                "key": "size",
+                "values": ["small", "medium", "large"]
+            }
+        ]
+    }
+]

@@ -7,7 +7,7 @@ import './App.css';
 function App() {
     return (
         <div className="App">
-            <h1>Sample App</h1>
+            <h1>Shutterfly Sample App</h1>
             <Router>
                 <Switch>
                     <Route path="/" exact={true} component={ProductList} />
