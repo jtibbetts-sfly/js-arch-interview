@@ -29,7 +29,7 @@ export default function ProductDetails() {
             const productType = productData.type;
             fetch(`http://localhost:3001/products/${productType}/price`, {
                 method: 'POST',
-                ["Content-Type"]: "application/json",
+                "Content-Type": "application/json",
                 body: JSON.stringify(selection)
             }).then(res => res.json()).then(data => {
                 setPriceData(data);
@@ -55,7 +55,7 @@ export default function ProductDetails() {
             { productData && 
                 <div className="product">
                     <div>
-                        <img src={img} />
+                        <img src={img} alt={name}/>
                     </div>
                     <div>
                         <div className="price">

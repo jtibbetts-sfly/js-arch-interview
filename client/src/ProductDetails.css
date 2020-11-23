@@ -27,10 +27,13 @@
 
 .ProductDetails .product > div {
     display: flex;
-    flex: 1 1 35%;
+    flex: 1 1 33%;
     justify-content: flex-start;
     flex-flow: column nowrap;
     margin: 0 0 0 20px;
+}
+.ProductDetails .product > div:first-of-type {
+    flex: 4 1 66%;
 }
 .ProductDetails .product .price {
     display: flex;

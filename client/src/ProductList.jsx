@@ -16,7 +16,7 @@ export default function ProductList({ type }) {
                 {products.map(({ id, name, thumb }) => 
                     <li key={`product-${id}`}>
                         <Link to={`/${id}`}>
-                            <img src={thumb}/>
+                            <img src={thumb} alt={name} />
                             <strong>{name}</strong>
                         </Link>
                     </li>
