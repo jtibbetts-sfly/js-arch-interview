@@ -24,10 +24,10 @@ High level js interview project
 
 # Test
 
-## Feature 1: Add a JWT login/logout functionality. (client/server)
-    * client should display a link/button to login if user is not logged in
-    * client should display the logged in users' name and a link/button to logout if user is logged in
-
-    * server should support JWT authentication
-    * server should support endpoint to return current user details
-    
+## Feature 1: Add JWT authentication. (client/server)
+### Client
+* client should display a link/button to login if user is not logged in
+* client should display the logged in users' name and a link/button to logout if user is logged in
+### Server
+* server should support JWT authentication
+* server should support endpoint to return current user details
