@@ -3,8 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "private": true,
-  "repository": "https://gh.internal.shutterfly.com/shutterfly/js-arch-interview.git",
   "author": "jtibbetts <jtibbetts@shutterfly.com>",
   "license": "MIT",
-  "workspaces": ["client", "server"]
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "start": "lerna run start --stream"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
 }
