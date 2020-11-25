@@ -1,0 +1,14 @@
+.login-form label {
+  display: block;
+  margin: 20px 0;
+}
+
+.login-form label input {
+  margin-left: 10px
+}
+
+.login-form .error {
+  color: red;
+  margin: 10px 0;
+  font-size: 0.75rem;
+}

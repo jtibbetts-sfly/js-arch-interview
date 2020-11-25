@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from './AuthService';
 import './ProductList.css';
 
 export default function ProductList({ type }) {
     const [products, setProducts] = useState([]);
+    const {authenticated, headers} = useAuth();
+
     useEffect(() => {
-        fetch('http://localhost:3001/products/').then(res => res.json()).then(setProducts).catch(e => {
+        authenticated && fetch('http://localhost:3001/products/', {headers})
+        .then(res => res.json())
+        .then(setProducts)
+        .catch(e => {
             setProducts([]);
-        })
-    }, [type]);
-    return (
+        });
+    }, [authenticated, headers, type]);
+
+    return authenticated ? (
         <div className="ProductList">
             <h2>Products</h2>
             <ul>
-                {products.map(({ id, name, thumb }) => 
+                {products.map(({ id, name, thumb }) =>
                     <li key={`product-${id}`}>
                         <Link to={`/${id}`}>
                             <img src={thumb} alt={name} />
@@ -23,5 +30,5 @@ export default function ProductList({ type }) {
                 )}
             </ul>
         </div>
-    );
+    ) : null;
 }
